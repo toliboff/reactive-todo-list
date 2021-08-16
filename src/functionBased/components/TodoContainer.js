@@ -10,6 +10,7 @@ const TodoContainer = () => {
     const savedTodos = JSON.parse(temp);
     return savedTodos || [];
   }
+
   const [todos, setTodos] = useState(getInitialTodos());
 
   useEffect(() => {
