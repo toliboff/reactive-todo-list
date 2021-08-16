@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './TodoItem.module.css';
 
@@ -23,7 +23,7 @@ const TodoItem = ({
     opacity: 0.4,
     textDecoration: 'line-through',
   };
-  // const { todoData } = props.todo;
+
   const { completed, id, title } = todo;
 
   const viewMode = {};
@@ -34,6 +34,10 @@ const TodoItem = ({
   } else {
     editMode.display = 'none';
   }
+
+  useEffect(() => () => {
+    console.log('Cleaning up...');
+  }, []);
 
   return (
     <li className={styles.item}>
