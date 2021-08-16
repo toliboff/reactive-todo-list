@@ -1,16 +1,16 @@
 /* eslint-disable */
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList'
 import { v4 as uuidv4 } from 'uuid';
-class TodoContainer extends React.Component {
-  state = {
-    todos: [],
-   };
+
+const TodoContainer = () => {
+  const [todos, setTodos] = useState([])
 
 
    handleChange = (id) => {
+    const [todos, setTodos] = useState([])
     this.setState(prevState => ({
       todos: prevState.todos.map(todo => {
         if (todo.id === id) {
